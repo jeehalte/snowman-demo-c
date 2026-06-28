@@ -1,10 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.ServiceResult;
 import com.example.demo.facade.DemoFacade;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
+import java.util.List;
 
 @RestController
 public class DemoController {
@@ -15,7 +16,7 @@ public class DemoController {
   }
 
   @GetMapping("/demo")
-  public Map<String, Object> demo() {
+  public List<ServiceResult> demo() {
     return facade.handle();
   }
 }
