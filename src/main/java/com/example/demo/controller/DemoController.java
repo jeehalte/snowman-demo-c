@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.external.ExternalRestClient;
+import com.example.demo.facade.DemoFacade;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,14 +8,14 @@ import java.util.Map;
 
 @RestController
 public class DemoController {
-  private final ExternalRestClient externalRestClient;
+  private final DemoFacade facade;
 
-  public DemoController(ExternalRestClient externalRestClient) {
-    this.externalRestClient = externalRestClient;
+  public DemoController(DemoFacade facade) {
+    this.facade = facade;
   }
 
   @GetMapping("/demo")
   public Map<String, Object> demo() {
-    return externalRestClient.fetchRemote();
+    return facade.handle();
   }
 }
