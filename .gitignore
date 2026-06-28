@@ -1,0 +1,15 @@
+# Gradle
+/.gradle
+/build
+
+# IDE
+/.idea
+/*.iml
+
+# VS Code
+/.vscode
+
+# Mac
+/.DS_Store
+
+.gradle/
